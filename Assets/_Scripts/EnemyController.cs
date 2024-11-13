@@ -22,6 +22,11 @@ public class EnemyController : MonoBehaviour
     }
 
     public void GetNextWaypoint() {
+        if (waypointIndex >= WaypointsManager.waypoints.Length - 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
         waypointIndex++;
         target = WaypointsManager.waypoints[waypointIndex];
     }
