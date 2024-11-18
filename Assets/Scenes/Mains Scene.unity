@@ -13700,6 +13700,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42299f93366637444908adbb21589695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTower:
+    prefab: {fileID: 7277909899422999558, guid: 12ca77b04c775db47978a092694253ca, type: 3}
+    cost: 0
+  anotherTower:
+    prefab: {fileID: 7277909899422999558, guid: 77c4719ec561a584ca3bf9ec6093f3ce, type: 3}
+    cost: 0
 --- !u!4 &1710672595
 Transform:
   m_ObjectHideFlags: 0

@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
+    public TowerBlueprint standardTower;
+    public TowerBlueprint anotherTower;
     BuildManager buildManager;
     void Start() {
         buildManager = BuildManager.instance;
     }
-    public void PurchaseStandardTower() {
-        buildManager.SetTowerToBuild(buildManager.standardTowerPrefab);
+    public void SelectStandardTower() {
+        buildManager.SelectTowerToBuild(standardTower);
     }
-    public void PurchaseAnotherTower() {
-        buildManager.SetTowerToBuild(buildManager.anotherTowerPrefab);
+    public void SelectAnotherTower() {
+        buildManager.SelectTowerToBuild(anotherTower);
     }
 }

@@ -5,9 +5,10 @@ public class NodeController : MonoBehaviour
 {
     public Color hoverColor;
     public Vector3 positionOffset;
-    private Color startColor;
+    [Header("Optional")]
+    public GameObject tower;
     private Renderer rend;
-    private GameObject tower;
+    private Color startColor;
     BuildManager buildManager;
     void Start() 
     {
@@ -15,9 +16,15 @@ public class NodeController : MonoBehaviour
         startColor = rend.material.color;
         buildManager = BuildManager.instance;
     }
+
+    public Vector3 GetBuildPosition() 
+    {
+        return transform.position + positionOffset;
+    }    
+
     void OnMouseDown() 
     {
-        if (buildManager.getTowerToBuild() == null)
+        if (!buildManager.CanBuild)
         {
             return;
         }
@@ -26,20 +33,16 @@ public class NodeController : MonoBehaviour
             Debug.Log("Can't build there!");
             return;
         }
-        GameObject towerToBuild = buildManager.getTowerToBuild();
-        tower = (GameObject)Instantiate(towerToBuild, transform.position + positionOffset, transform.rotation);
+        buildManager.BuildTowerOn(this);
     }
 
     void OnMouseEnter () 
     {
         if (EventSystem.current.IsPointerOverGameObject())
-        {
             return;
-        }
-        if (buildManager.getTowerToBuild() == null)
-        {
+        if (!buildManager.CanBuild)
             return;
-        }
+
         rend.material.color = hoverColor;
     }
     void OnMouseExit(){

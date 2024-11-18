@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
@@ -13,11 +14,20 @@ public class BuildManager : MonoBehaviour
     }
     public GameObject standardTowerPrefab;
     public GameObject anotherTowerPrefab;
-    private GameObject towerToBuild;
-    public GameObject getTowerToBuild() {
-        return towerToBuild;
+    private TowerBlueprint towerToBuild;
+    public bool CanBuild { get {return towerToBuild != null; } }
+    public void BuildTowerOn(NodeController node) {
+        if (StatsManager.Money < towerToBuild.cost)
+        {
+            Debug.Log ("Not Money");
+            return;
+        }
+        StatsManager.Money -= towerToBuild.cost;
+        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.tower = tower;
+        Debug.Log("Current Money: "+StatsManager.Money);
     }
-    public void SetTowerToBuild(GameObject tower) {
+    public void SelectTowerToBuild(TowerBlueprint tower) {
         towerToBuild = tower;
     }
 }
