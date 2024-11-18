@@ -3,7 +3,8 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-    void Awake() {
+    void Awake() 
+    {
         if (instance != null)
         {
             Debug.Log("More than on BuildManager in scene!");
@@ -11,11 +12,12 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
     public GameObject standardTowerPrefab;
-    void Start () {
-        towerToBuild = standardTowerPrefab;
-    }
+    public GameObject anotherTowerPrefab;
     private GameObject towerToBuild;
     public GameObject getTowerToBuild() {
         return towerToBuild;
+    }
+    public void SetTowerToBuild(GameObject tower) {
+        towerToBuild = tower;
     }
 }
