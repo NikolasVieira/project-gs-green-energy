@@ -1,17 +1,16 @@
+using System;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed = 10f;
+    public float startSpeed = 10f;
+    [HideInInspector] public float speed;
     public int health = 100;
     public int reward = 50;
     public GameObject deathEffect;
 
-    private Transform target;
-    private int waypointIndex = 0;
-
-    public void Start() {
-        target = WaypointsManager.waypoints[0];
+    void Start() {
+        speed = startSpeed;
     }
 
     public void TakeDamage(int amout) {
@@ -22,35 +21,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void Slow(float percentage) {
+        speed = startSpeed * (1f - percentage);
+    }
+
     void Die() {
         StatsManager.Money += reward;
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
-        Destroy(gameObject);
-    }
-
-    public void Update() {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWaypoint();
-        }
-    }
-
-    public void GetNextWaypoint() {
-        if (waypointIndex >= WaypointsManager.waypoints.Length - 1)
-        {
-            EndPath();
-            return;
-        }
-        waypointIndex++;
-        target = WaypointsManager.waypoints[waypointIndex];
-    }
-
-    void EndPath() {
-        StatsManager.Lives--;
         Destroy(gameObject);
     }
 }

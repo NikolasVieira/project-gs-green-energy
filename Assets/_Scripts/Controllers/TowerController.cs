@@ -11,6 +11,10 @@ public class TowerController : MonoBehaviour
     public float turnSpeed = 5f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+
+    [Header("Use Wind")]
+    public bool useWind = false;
+    public float slowPercentage = 0.5f;
     
     [Header("Unity Setup Fields")]
     private Transform target;
@@ -69,6 +73,10 @@ public class TowerController : MonoBehaviour
         {
             bullet.Seek(target);
         }
+    }
+
+    void Wind() {
+        target.GetComponent<EnemyController>().Slow(slowPercentage);
     }
 
     void OnDrawGizmosSelected() 
