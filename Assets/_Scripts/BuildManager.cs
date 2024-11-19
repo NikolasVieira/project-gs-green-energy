@@ -16,6 +16,7 @@ public class BuildManager : MonoBehaviour
     public GameObject anotherTowerPrefab;
     private TowerBlueprint towerToBuild;
     public bool CanBuild { get {return towerToBuild != null; } }
+    public bool HasMoney { get {return StatsManager.Money >= towerToBuild.cost; } }
     public void BuildTowerOn(NodeController node) {
         if (StatsManager.Money < towerToBuild.cost)
         {

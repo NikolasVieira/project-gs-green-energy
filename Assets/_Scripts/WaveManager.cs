@@ -10,7 +10,6 @@ public class WaveManager : MonoBehaviour
     public TextMeshProUGUI WaveCountdownText;
     private int waveIndex = 0;
 
-
     public void Update()
     {
         if (countdown <= 0f)
