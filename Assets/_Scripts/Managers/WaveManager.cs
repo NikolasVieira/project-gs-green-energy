@@ -18,10 +18,14 @@ public class WaveManager : MonoBehaviour
             countdown = timeBetweenWaves;
         }
         countdown -= Time.deltaTime;
-        WaveCountdownText.text = Mathf.Round(countdown).ToString();
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+        WaveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
 
-    IEnumerator SpawnWave() {
+    IEnumerator SpawnWave() 
+    {
+        waveIndex++;
+        StatsManager.Waves++;
         for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy();

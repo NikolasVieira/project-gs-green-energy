@@ -4,11 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
+    public static bool GameIsOver = false;
+    public GameObject gameOverUI;
+
+    void Start() {
+        GameIsOver = false;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (gameEnded)
+        if (GameIsOver)
             return;
             
         if (StatsManager.Lives <= 0)
@@ -18,8 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void EndGame() {
-        gameEnded = true;
-        Debug.Log("GameOver");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameIsOver = true;
+        gameOverUI.SetActive(true);
     }
 }

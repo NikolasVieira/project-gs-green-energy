@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 5966120558608340772}
   - component: {fileID: 7536302785223066957}
   m_Layer: 0
-  m_Name: StandardTower 1
+  m_Name: StandardTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,6 +263,8 @@ MonoBehaviour:
   range: 10
   turnSpeed: 5
   fireRate: 1
+  useWind: 0
+  slowPercentage: 0.5
   rotatePart: {fileID: 5966120558608340772}
   firePoint: {fileID: 435995932808957317}
   pfBullet: {fileID: 545051966182658671, guid: a5b77743a0012dd4f9ce58a319e3a00f, type: 3}
