@@ -3643,7 +3643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1442248313}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &308803179
@@ -8420,9 +8420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f93eff40d1c614f9a8a641918faea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTowerPrefab: {fileID: 7277909899422999558, guid: 12ca77b04c775db47978a092694253ca, type: 3}
-  anotherTowerPrefab: {fileID: 7277909899422999558, guid: 77c4719ec561a584ca3bf9ec6093f3ce, type: 3}
-  buildEffct: {fileID: 1987264601997752152, guid: 18847ea9d3b6c5344aadb90bae56bba7, type: 3}
 --- !u!114 &832489493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8435,8 +8432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bc92a902852c3428294101376ea1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
-  startLives: 5
 --- !u!114 &832489494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12515,7 +12510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a155a2d06b20540a37b0db459ceb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyText: {fileID: 830397189}
 --- !u!1001 &1365159967
 PrefabInstance:
   m_ObjectHideFlags: 0
