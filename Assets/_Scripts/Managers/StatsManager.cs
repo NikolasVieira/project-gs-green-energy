@@ -8,8 +8,11 @@ public class StatsManager : MonoBehaviour
     public static int Lives;
     public int startLives = 5;
 
+    public static int Waves;
+
     void Start() {
         Money = startMoney;
         Lives = startLives;
+        Waves = 0;
     }
 }
