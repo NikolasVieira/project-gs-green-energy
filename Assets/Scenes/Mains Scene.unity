@@ -20477,6 +20477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: === AUDIO ===
       objectReference: {fileID: 0}
+    - target: {fileID: 2389434601198903188, guid: da52692db4969454599cd4b20fd40958, type: 3}
+      propertyPath: musicType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7597216648428490583, guid: da52692db4969454599cd4b20fd40958, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.71279
