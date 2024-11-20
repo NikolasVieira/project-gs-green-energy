@@ -86,7 +86,7 @@ MonoBehaviour:
   - musicType: 2
     audioClip: {fileID: 8300000, guid: cd1035904226cd04097e9f035812aba5, type: 3}
   sfxSetups: []
-  musicSource: {fileID: 0}
+  musicSource: {fileID: 3329341756004555560}
 --- !u!1 &2725294870851088695
 GameObject:
   m_ObjectHideFlags: 0

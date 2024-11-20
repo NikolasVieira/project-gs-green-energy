@@ -13,7 +13,7 @@ public class NodeController : MonoBehaviour
     BuildManager buildManager;
     void Start() 
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponentInChildren<Renderer>();
         startColor = rend.material.color;
         buildManager = BuildManager.instance;
     }
