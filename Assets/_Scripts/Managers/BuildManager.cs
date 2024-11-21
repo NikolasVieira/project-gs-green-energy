@@ -12,24 +12,36 @@ public class BuildManager : MonoBehaviour
         }
         instance = this;
     }
-    public GameObject standardTowerPrefab;
-    public GameObject anotherTowerPrefab;
     public GameObject buildEffct;
     private TowerBlueprint towerToBuild;
+    private NodeController selectedNode;
+    public NodeUI nodeUI;
     public bool CanBuild { get {return towerToBuild != null; } }
     public bool HasMoney { get {return StatsManager.Money >= towerToBuild.cost; } }
-    public void BuildTowerOn(NodeController node) {
-        if (StatsManager.Money < towerToBuild.cost)
+    public void SelectNode(NodeController node) {
+        if (selectedNode == node)
         {
+            DeselectNode();
             return;
         }
-        StatsManager.Money -= towerToBuild.cost;
-        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.tower = tower;
-        GameObject effect = (GameObject)Instantiate(buildEffct, node.GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
+        selectedNode = node;
+        towerToBuild = null;
+        
+        nodeUI.SetTarget(node);
     }
+
     public void SelectTowerToBuild(TowerBlueprint tower) {
         towerToBuild = tower;
+        DeselectNode();
     }
+
+    public TowerBlueprint GetTowerToBuild() {
+        return towerToBuild;
+    }
+
+    public void DeselectNode() {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
+    
 }

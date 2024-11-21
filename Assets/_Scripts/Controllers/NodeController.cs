@@ -6,8 +6,9 @@ public class NodeController : MonoBehaviour
     public Color hoverColor;
     public Color nothEnoughMoney;
     public Vector3 positionOffset;
-    [Header("Optional")]
-    public GameObject tower;
+    [HideInInspector] public GameObject tower;
+    [HideInInspector] public TowerBlueprint towerBlueprint;
+    [HideInInspector] public bool isUpgraded;
     private Renderer rend;
     private Color startColor;
     BuildManager buildManager;
@@ -25,16 +26,44 @@ public class NodeController : MonoBehaviour
 
     void OnMouseDown() 
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        if (tower != null){
+            buildManager.SelectNode(this);
+            return;
+        }
         if (!buildManager.CanBuild)
-        {
             return;
-        }
-        if (tower != null)
-        {
-            Debug.Log("Can't build there!");
+        BuildTower(buildManager.GetTowerToBuild());
+    }
+
+    void BuildTower(TowerBlueprint blueprint) {
+        if (StatsManager.Money < blueprint.cost)
             return;
-        }
-        buildManager.BuildTowerOn(this);
+        StatsManager.Money -= blueprint.cost;
+
+        GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        tower = _tower;
+
+        towerBlueprint = blueprint;
+
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffct, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 5f);
+    }
+
+    public void UpgradeTower() {
+        if (StatsManager.Money < towerBlueprint.upgradeCost)
+            return;
+        StatsManager.Money -= towerBlueprint.upgradeCost;
+        Destroy(tower);
+
+        GameObject _tower = (GameObject)Instantiate(towerBlueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        tower = _tower;
+        
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffct, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 5f);
+
+        isUpgraded = true;
     }
 
     void OnMouseEnter () 
