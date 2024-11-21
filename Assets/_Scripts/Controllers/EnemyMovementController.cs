@@ -37,6 +37,7 @@ public class EnemyMovementController : MonoBehaviour
 
     void EndPath() {
         StatsManager.Lives--;
+        WaveManager.EnemiesAlive--;
         Destroy(gameObject);
     }
 }

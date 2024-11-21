@@ -7,6 +7,7 @@ public class NodeUI : MonoBehaviour
 {
     public GameObject canvas;
     public TextMeshProUGUI upgradeCost;
+    public TextMeshProUGUI sellCost;
     public Button btnUpgrade;
     private NodeController target;
 
@@ -26,7 +27,7 @@ public class NodeUI : MonoBehaviour
             btnUpgrade.interactable = false;
         }
 
-
+        sellCost.text = target.towerBlueprint.GetSellAmount().ToString();
         canvas.SetActive(true);
     }
 
@@ -37,6 +38,10 @@ public class NodeUI : MonoBehaviour
 
     public void Upgrade() {
         target.UpgradeTower();
+        BuildManager.instance.DeselectNode();
+    }
+    public void Sell() {
+        target.SellTower();
         BuildManager.instance.DeselectNode();
     }
 }

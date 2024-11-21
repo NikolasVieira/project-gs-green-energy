@@ -29,6 +29,7 @@ public class EnemyController : MonoBehaviour
         StatsManager.Money += reward;
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
+        WaveManager.EnemiesAlive--;
         Destroy(gameObject);
     }
 }

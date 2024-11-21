@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private bool canMovement = true;
+    public Vector3 initialPosition;
     public float panSpeed = 30f;
     public float scrollSpeed = 5f;
     public float panBorderThickness = 10f;
@@ -15,6 +15,10 @@ public class CameraController : MonoBehaviour
     public float minZ = -50f;
     public float maxZ = 50f;
 
+    void Start() {
+        initialPosition = transform.position;
+    }
+
     void Update()
     {
         if (GameManager.GameIsOver)
@@ -23,13 +27,9 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            canMovement = !canMovement;
-        }
-        if (!canMovement)
-        {
-            return;
+            transform.position = initialPosition;
         }
 
         Vector3 direction = Vector3.zero;

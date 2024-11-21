@@ -66,6 +66,12 @@ public class NodeController : MonoBehaviour
         isUpgraded = true;
     }
 
+    public void SellTower() {
+        StatsManager.Money += towerBlueprint.GetSellAmount();
+        Destroy(tower);
+        towerBlueprint = null;
+    }
+
     void OnMouseEnter () 
     {
         if (EventSystem.current.IsPointerOverGameObject())
