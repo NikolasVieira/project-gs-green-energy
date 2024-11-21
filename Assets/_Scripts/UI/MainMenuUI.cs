@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     public int levelIndex = 1;
+    public GameObject canvasCredits;
+    public bool isCreditsActive = false;
     public void Play() {
         SceneManager.LoadScene(levelIndex);
     }
@@ -11,7 +13,8 @@ public class MainMenuUI : MonoBehaviour
         Debug.Log("Config");
     }
     public void Credits() {
-        Debug.Log("Credits");
+        canvasCredits.SetActive(!isCreditsActive);
+        isCreditsActive = !isCreditsActive;
     }
     public void Quit() {
         Application.Quit();
