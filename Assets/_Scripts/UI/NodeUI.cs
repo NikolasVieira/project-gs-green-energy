@@ -7,8 +7,11 @@ public class NodeUI : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject canvasRotate;
+    public GameObject pnInfo;
     public TextMeshProUGUI upgradeCost;
     public TextMeshProUGUI sellCost;
+    public TextMeshProUGUI txtInfoTittle;
+    public TextMeshProUGUI txtInfoDescription;
     public Button btnUpgrade;
     private NodeController target;
 
@@ -42,6 +45,7 @@ public class NodeUI : MonoBehaviour
     public void Hide() 
     {
         canvas.SetActive(false);
+        pnInfo.SetActive(false);
     }
 
     public void Upgrade() {
@@ -51,6 +55,11 @@ public class NodeUI : MonoBehaviour
     public void Sell() {
         target.SellTower();
         BuildManager.instance.DeselectNode();
+    }
+    public void Info() {
+        pnInfo.SetActive(true);
+        txtInfoTittle.text = target.towerBlueprint.Name;
+        txtInfoDescription.text = target.towerBlueprint.Description;
     }
     public void TurnTowerClockwise() {
         target.TurnTowerClockwise();
