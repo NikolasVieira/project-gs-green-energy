@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NodeUI : MonoBehaviour
 {
     public GameObject canvas;
+    public GameObject canvasRotate;
     public TextMeshProUGUI upgradeCost;
     public TextMeshProUGUI sellCost;
     public Button btnUpgrade;
@@ -29,6 +30,13 @@ public class NodeUI : MonoBehaviour
 
         sellCost.text = target.towerBlueprint.GetSellAmount().ToString();
         canvas.SetActive(true);
+        if (target.tower.GetComponent<TowerController>().useWind)
+        {
+            canvasRotate.SetActive(true);
+        } else
+        {
+            canvasRotate.SetActive(false);
+        }
     }
 
     public void Hide() 
@@ -43,5 +51,8 @@ public class NodeUI : MonoBehaviour
     public void Sell() {
         target.SellTower();
         BuildManager.instance.DeselectNode();
+    }
+    public void TurnTowerClockwise() {
+        target.TurnTowerClockwise();
     }
 }

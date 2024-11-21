@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     }
 
     public void Slow(float percentage) {
+        Debug.Log("Slow " + (1f - percentage));
         speed = startSpeed * (1f - percentage);
     }
 

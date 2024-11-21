@@ -6,12 +6,18 @@ public class NodeController : MonoBehaviour
     public Color hoverColor;
     public Color nothEnoughMoney;
     public Vector3 positionOffset;
+    //[HideInInspector] 
     [HideInInspector] public GameObject tower;
+    //[HideInInspector] 
     [HideInInspector] public TowerBlueprint towerBlueprint;
     [HideInInspector] public bool isUpgraded;
     private Renderer rend;
     private Color startColor;
     BuildManager buildManager;
+    
+    private float[] possibleRotations = { 0f, 90f, 180f, 270f };
+    private int currentRotationIndex = 0;
+
     void Start() 
     {
         rend = GetComponentInChildren<Renderer>();
@@ -70,6 +76,13 @@ public class NodeController : MonoBehaviour
         StatsManager.Money += towerBlueprint.GetSellAmount();
         Destroy(tower);
         towerBlueprint = null;
+    }
+
+    public void TurnTowerClockwise() {
+        // Avança para a próxima rotação no sentido horário
+        currentRotationIndex = (currentRotationIndex + 1) % possibleRotations.Length;
+        float rotationY = possibleRotations[currentRotationIndex];
+        tower.transform.rotation = Quaternion.Euler(0, rotationY, 0);
     }
 
     void OnMouseEnter () 

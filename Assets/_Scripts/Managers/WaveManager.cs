@@ -11,6 +11,7 @@ public class WaveManager : MonoBehaviour
     private float countdown = 3f;
     public TextMeshProUGUI waveCountdownText;
     private int waveIndex = 0;
+    public GameObject canvasWin;
 
     public void Update()
     {
@@ -38,9 +39,15 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f / wave.rate);
         }
         waveIndex++;
+
+        if (waveIndex == waves.Length)
+        {
+            canvasWin.SetActive(true);
+            this.enabled = false;
+        }
     }
 
     void SpawnEnemy(GameObject enemy) 

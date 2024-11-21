@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5966120558608340772}
   - component: {fileID: 7536302785223066957}
+  - component: {fileID: -8268716816650025559}
   m_Layer: 0
   m_Name: pfSolarTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,14 +47,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
+  towerTag: Tower
   range: 10
   turnSpeed: 5
   fireRate: 1
-  useWind: 0
-  slowPercentage: 0.5
   rotatePart: {fileID: 159427500493890974}
   firePoint: {fileID: 159427500493890974}
   pfBullet: {fileID: 545051966182658671, guid: a5b77743a0012dd4f9ce58a319e3a00f, type: 3}
+  useSun: 1
+  sunIncome: 5
+  useWind: 0
+  slowPercentage: 0.5
+  windBoxSize: {x: 10, y: 5, z: 5}
+  windBoxCenter: {fileID: 0}
+  useData: 0
+  dataBoxSize: {x: 10, y: 5, z: 10}
+  dataBoxCenter: {fileID: 0}
+  boostTurnSpeed: 2
+  boostFireRate: 0.5
+--- !u!65 &-8268716816650025559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277909899422999558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &413450503895155317
 PrefabInstance:
   m_ObjectHideFlags: 0
