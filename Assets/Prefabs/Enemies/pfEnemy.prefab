@@ -71,7 +71,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 10
   health: 100
-  reward: 50
+  reward: 10
   deathEffect: {fileID: 2180115243898894406, guid: 878025575f1d3a54a83c6dcd3c22a8f6, type: 3}
 --- !u!114 &5249093790100341565
 MonoBehaviour:

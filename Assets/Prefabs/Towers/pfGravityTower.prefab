@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTag: Enemy
   towerTag: Tower
-  range: 10
+  range: 13
   turnSpeed: 10
   fireRate: 2
   rotatePart: {fileID: 3314561889482281870}

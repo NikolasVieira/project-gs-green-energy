@@ -231,10 +231,10 @@ RectTransform:
   - {fileID: 1284377082}
   m_Father: {fileID: 696321608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 202.5, y: -50}
+  m_SizeDelta: {x: 90, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22780379
 MonoBehaviour:
@@ -4718,7 +4718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &696321608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5696,7 +5696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 300
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
   m_sharedMaterial: {fileID: -5257188988045701448, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
@@ -5942,11 +5942,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 3675435056268704984, guid: 8773b4f915199334aab2db1855ada51b, type: 3}
-    count: 3
+    count: 4
     rate: 1
   - enemy: {fileID: 3675435056268704984, guid: 8773b4f915199334aab2db1855ada51b, type: 3}
-    count: 5
-    rate: 5
+    count: 8
+    rate: 1
   - enemy: {fileID: 3675435056268704984, guid: 8773b4f915199334aab2db1855ada51b, type: 3}
     count: 10
     rate: 1
@@ -6016,7 +6016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bc92a902852c3428294101376ea1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
+  startMoney: 200
   startLives: 5
 --- !u!114 &832489494
 MonoBehaviour:
@@ -6950,7 +6950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 350
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
   m_sharedMaterial: {fileID: -5257188988045701448, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
@@ -9016,7 +9016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 250
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
   m_sharedMaterial: {fileID: -5257188988045701448, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
@@ -9741,10 +9741,10 @@ RectTransform:
   - {fileID: 1734323854}
   m_Father: {fileID: 696321608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 107.5, y: -50}
+  m_SizeDelta: {x: 90, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442248315
 MonoBehaviour:
@@ -11319,10 +11319,10 @@ RectTransform:
   - {fileID: 1943017844}
   m_Father: {fileID: 696321608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 297.5, y: -50}
+  m_SizeDelta: {x: 90, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604340767
 MonoBehaviour:
@@ -11764,7 +11764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 300
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
   m_sharedMaterial: {fileID: -5257188988045701448, guid: 78dff3feadd0ae34c9c9624dd1db4d90, type: 2}
@@ -12206,9 +12206,9 @@ MonoBehaviour:
       3. Um inversor solar converte a energia de corrente cont\xEDnua (DC) em corrente
       alternada (AC), usada na maioria dos dispositivos el\xE9tricos. "
     prefab: {fileID: 7277909899422999558, guid: 5d580e6a0f1414249bd9043ee66904cb, type: 3}
-    cost: 50
+    cost: 300
     upgradedPrefab: {fileID: 7277909899422999558, guid: 61b9ba505e3f9e74ea9430d73b9e29e0, type: 3}
-    upgradeCost: 100
+    upgradeCost: 300
   eolicTower:
     Name: "Torre E\xF3lica"
     Description: "As h\xE9lices da torre giram gerando um vento na dire\xE7\xE3o
@@ -12224,9 +12224,9 @@ MonoBehaviour:
       a energia \xE9 distribu\xEDda para resid\xEAncias, ind\xFAstrias ou armazenada
       em sistemas espec\xEDficos. "
     prefab: {fileID: 7277909899422999558, guid: 77c4719ec561a584ca3bf9ec6093f3ce, type: 3}
-    cost: 100
+    cost: 300
     upgradedPrefab: {fileID: 7277909899422999558, guid: 1505e556a1dd6d24ca1dd6b3d41f30b8, type: 3}
-    upgradeCost: 200
+    upgradeCost: 300
   gravityTower:
     Name: Torre de Gravidade
     Description: "<b>Muni\xE7\xE3o de energia.</b> \n- De segundos em segundos a
@@ -12241,9 +12241,9 @@ MonoBehaviour:
       armazenada. \r\n- Quando o peso desce, ele gira o eixo do gerador, produzindo
       eletricidade. "
     prefab: {fileID: 7277909899422999558, guid: c7bd160548ef98c4aaeaebee4e91a09e, type: 3}
-    cost: 250
+    cost: 100
     upgradedPrefab: {fileID: 7277909899422999558, guid: cdeba05ab6db7ba4594e2ee1b6865caf, type: 3}
-    upgradeCost: 500
+    upgradeCost: 200
   smartGridTower:
     Name: Smart Grid
     Description: "Essa torre suporte aumenta a velocidade de ataque/giro se tiver
@@ -12253,9 +12253,9 @@ MonoBehaviour:
       e enviam dados automaticamente para o fornecedor. \r\n- Sensores na rede detectam
       problemas, como quedas de energia ou sobrecargas. "
     prefab: {fileID: 7277909899422999558, guid: 89c987967dc1bfe4eaf790165f9f6d5f, type: 3}
-    cost: 500
+    cost: 350
     upgradedPrefab: {fileID: 7277909899422999558, guid: c1555b7c764f93542a983f9c165edef8, type: 3}
-    upgradeCost: 1000
+    upgradeCost: 400
 --- !u!4 &1710672595
 Transform:
   m_ObjectHideFlags: 0
@@ -13094,10 +13094,10 @@ RectTransform:
   - {fileID: 1633560925}
   m_Father: {fileID: 696321608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 392.5, y: -50}
+  m_SizeDelta: {x: 90, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1931771989
 MonoBehaviour:
